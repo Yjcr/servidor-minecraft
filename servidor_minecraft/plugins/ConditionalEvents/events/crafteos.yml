@@ -1,0 +1,138 @@
+Events:
+  bloquear_crafteo_espadaDeGobber:
+    type: item_craft
+    conditions:
+    - '%item% == GOBBER2_GOBBER2_SWORD'
+    actions:
+      default:
+      - 'cancel_event: true'
+      - 'call_event: acionesDeBloqueoItem'
+    enable: true
+  bloquear_crafteo_arcoDeGobber:
+    type: item_craft
+    conditions:
+    - '%item% == GOBBER2_GOBBER2_BOW'
+    actions:
+      default:
+      - 'cancel_event: true'
+      - 'call_event: acionesDeBloqueoItem'
+    enable: true
+  bloquear_crafteo_picoDeGobber:
+    type: item_craft
+    conditions:
+    - '%item% == GOBBER2_GOBBER2_PICKAXE'
+    actions:
+      default:
+      - 'cancel_event: true'
+      - 'call_event: acionesDeBloqueoItem'
+    enable: true
+  bloquear_crafteo_palaDeGobber:
+    type: item_craft
+    conditions:
+    - '%item% == GOBBER2_GOBBER2_SHOVEL'
+    actions:
+      default:
+      - 'cancel_event: true'
+      - 'call_event: acionesDeBloqueoItem'
+    enable: true
+  bloquear_crafteo_hachaDeGobber:
+    type: item_craft
+    conditions:
+    - '%item% == GOBBER2_GOBBER2_AXE'
+    actions:
+      default:
+      - 'cancel_event: true'
+      - 'call_event: acionesDeBloqueoItem'
+    enable: true
+  bloquear_crafteo_superHachaDeGobber:
+    type: item_craft
+    conditions:
+    - '%item% == GOBBER2_GOBBER2_TREE_AXE'
+    actions:
+      default:
+      - 'cancel_event: true'
+      - 'call_event: acionesDeBloqueoItem'
+    enable: true
+  bloquear_crafteo_azadaDeGobber:
+    type: item_craft
+    conditions:
+    - '%item% == GOBBER2_GOBBER2_HOE'
+    actions:
+      default:
+      - 'cancel_event: true'
+      - 'call_event: acionesDeBloqueoItem'
+    enable: true
+  bloquear_crafteo_martilloDeGobber:
+    type: item_craft
+    conditions:
+    - '%item% == GOBBER2_GOBBER2_HAMMER'
+    actions:
+      default:
+      - 'cancel_event: true'
+      - 'call_event: acionesDeBloqueoItem'
+    enable: true
+  bloquear_crafteo_excavadoraDeGobber:
+    type: item_craft
+    conditions:
+    - '%item% == GOBBER2_GOBBER2_EXCAVATOR'
+    actions:
+      default:
+      - 'cancel_event: true'
+      - 'call_event: acionesDeBloqueoItem'
+    enable: true
+  bloquear_crafteo_superPalaDeGobber:
+    type: item_craft
+    conditions:
+    - '%item% == GOBBER2_GOBBER2_PAXEL'
+    actions:
+      default:
+      - 'cancel_event: true'
+      - 'call_event: acionesDeBloqueoItem'
+    enable: true
+  bloquear_crafteo_cascoDeGobber:
+    type: item_craft
+    conditions:
+    - '%item% == GOBBER2_GOBBER2_HELMET'
+    actions:
+      default:
+      - 'cancel_event: true'
+      - 'call_event: acionesDeBloqueoItem'
+    enable: true
+  bloquear_crafteo_percheraDeGobber:
+    type: item_craft
+    conditions:
+    - '%item% == GOBBER2_GOBBER2_CHESTPLATE'
+    actions:
+      default:
+      - 'cancel_event: true'
+      - 'call_event: acionesDeBloqueoItem'
+    enable: true
+  bloquear_crafteo_pantalonesDeGobber:
+    type: item_craft
+    conditions:
+    - '%item% == GOBBER2_GOBBER2_LEGGINGS'
+    actions:
+      default:
+      - 'cancel_event: true'
+      - 'call_event: acionesDeBloqueoItem'
+    enable: true
+  bloquear_crafteo_botasDeGobber:
+    type: item_craft
+    conditions:
+    - '%item% == GOBBER2_GOBBER2_BOOTS'
+    actions:
+      default:
+      - 'cancel_event: true'
+      - 'call_event: acionesDeBloqueoItem'
+    enable: true
+    enabled: true
+  acionesDeBloqueoItem:
+    type: call
+    actions:
+      default:
+      - 'title: 10;30;10;&cItem bloqueado;&7¡No puedes craftear este item, PAJUO!'
+      - 'give_potion_effect: BLINDNESS;40;1;false'
+      - 'playsound: BLOCK_BELL_USE;10;0'
+      - 'wait_ticks: 1'
+      - close_inventory
+    enabled: true

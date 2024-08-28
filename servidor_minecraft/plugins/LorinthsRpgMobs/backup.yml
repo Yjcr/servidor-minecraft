@@ -1,0 +1,329 @@
+# For more detailed information go to https://dev.bukkit.org/projects/lorinthsrpgmobs/pages/configuration-config-yml
+# LevelHook: Vanilla, RpgItems, Heroes, BattleStats, SkillAPI, MMOCore
+
+AutoButcher:
+  ExecuteOnLoad: true
+  Args: -b -f
+  Worlds:
+  - world
+  - world_nether
+  - world_the_end
+LevelHook: Vanilla
+DistanceAlgorithm: Diamond
+AllowAutoUpdates: false
+ForceRpgMobsEquipment: false
+VanillaMobEquipmentOverrides: true
+IgnoreSpawnerMobs: true
+FormulaMethod: Java
+ExperienceDisplay:
+  Enabled: true
+  ChatMessageType: ACTION_BAR
+  Message: '&aObtuviste &e{exp} &ade exp!'
+BattleLevels:
+  Enabled: false
+DungeonsXL:
+  Enabled: false
+  DungeonLevels:
+    dungeon_a: 10-12
+EliteMobs:
+  OverrideEnabled: false
+  Worlds:
+    world: '{level} + ({level} / 4) + rand({level} /4)'
+    world_nether: '{level} + ({level} / 4) + rand({level} /4)'
+    world_the_end: '{level} + ({level} / 4) + rand({level} /4)'
+Heroes:
+  Enabled: false
+  PartyExperienceFormulas:
+    '2': 1.5 * {exp} / 2
+    '3': 1.8 * {exp} / 3
+    '4': 2.0 * {exp} / 4
+    '5': 2.2 * {exp} / 5
+    '6': 2.4 * {exp} / 6
+HealthBar:
+  Enabled: true
+  Type: Placeholder
+  Format: '{name} &7- &a{current} &7/ &a{max} &e{percent}%'
+  PercentBasedFormat:
+    '50': '{name}  &e{current} &7/ &a{max}'
+    '20': '{name}  &c{current} &7/ &a{max}'
+JobsReborn:
+  Enabled: false
+  Options:
+    HookExp: true
+    HookMoney: true
+    HookPoints: true
+    Points:
+      DEFAULT: 3 + {level}/5 + rand(3)
+      CREEPER: 5 + {level}/3 + rand(5)
+McMMo:
+  Enabled: false
+MmoCore:
+  Enabled: false
+  DistanceAlgorithm: Diamond
+  ValidDistance: 50
+  PartyExperienceFormulas:
+    '2': 1.5 * {exp} / 2
+    '3': 1.8 * {exp} / 3
+    '4': 2.0 * {exp} / 4
+    '5': 2.2 * {exp} / 5
+    '6': 2.4 * {exp} / 6
+MythicDrops:
+  Enabled: false
+MythicMobs:
+  Enabled: false
+  IgnoredWorlds:
+  - world_the_end
+SkillAPI:
+  Enabled: false
+SkillsPro:
+  Enabled: false
+Vault:
+  Enabled: false
+TardisWeepingAngels:
+  Enabled: true
+GriefPrevention:
+  Enabled: true
+  DisableSpawnsInAllClaims: false
+ExperiencePermissions:
+  default: 1.0
+  vip: 1.5
+Names:
+  TagsAlwaysOn: true
+  Format: '&a[Lvl.{level}] &7{Variant} &f{name}'
+SpawnPoints:
+  world:
+    mainTown:
+      Disabled: false
+      Level: 1
+      Distance: 50
+      MaxLevel: -1
+      CenterBuffer: 50
+      Variance: 0
+      Location:
+        X: 0
+        Z: 0
+    otherTown:
+      Disabled: true
+      Level: 20
+      Distance: 100
+      MaxLevel: 50
+      CenterBuffer: 0
+      Variance: 0
+      Location:
+        X: 10000
+        Z: -5000
+LevelRegions:
+  world:
+    undeadkeep:
+      Level: 40
+      Names:
+        ZOMBIE: '&5Undead Warrior'
+      Bosses:
+        ZOMBIE:
+          CrystalMiner: 10.0
+      Disabled: false
+      DisabledEntities:
+      - PIG
+MobVariants:
+  Disabled: true
+  VariantChance: 40
+  DisabledTypes:
+  - CREEPER
+  VariantWeightsPerLevel:
+    Enabled: false
+    '1':
+      AcidBomb: 10
+      Blinding: 10
+      Burning: 10
+      Confetti: 10
+      Explosive: 10
+      Fast: 10
+      Forceful: 10
+      Glowing: 10
+      Healing: 10
+      Invisible: 10
+      Joker: 10
+      Magma: 10
+      Poisonous: 10
+      Slow: 10
+      Strong: 10
+      Sturdy: 10
+      Tough: 10
+      Wealthy: 10
+  AcidBomb:
+    DisplayName: Acid Bomber
+    Disabled: false
+    DisabledTypes: []
+    Weight: 10
+    Poison:
+      Duration: 60
+      Level: 0
+      Chance: 80.0
+    Distance: 5
+    Dome:
+      CirclesCount: 8
+      ParticlesPerCircle: 50
+      MaxTimes: 2
+      Particle: REDSTONE
+      Color: OLIVE
+  Blinding:
+    DisplayName: Blinding
+    Disabled: false
+    DisabledTypes: []
+    Weight: 10
+    Blinding:
+      Duration: 60
+      Level: 2
+      Chance: 100.0
+  Boss:
+    DisplayName: Boss
+    Disabled: true
+    DisabledTypes: []
+    Weight: 1
+    HealthMultiplier: 10.0
+    CurrencyValueMultiplier: 10.0
+    ExperienceMultiplier: 10.0
+    SpeedMultiplier: 1.0
+    DamageMultiplier: 2.0
+  Burning:
+    DisplayName: Burning
+    Disabled: false
+    DisabledTypes: []
+    Weight: 10
+    DefensiveBurn:
+      Ticks: 20
+      Chance: 20.0
+  Confetti:
+    DisplayName: Confetti
+    Disabled: false
+    DisabledTypes: []
+    Weight: 10
+    Colors:
+    - RED
+    - GREEN
+    - BLUE
+    FadeColors:
+    - YELLOW
+    - PURPLE
+    - FUCHSIA
+    HasTrail: true
+    Power: 0
+    Type: BURST
+  Explosive:
+    DisplayName: Explosive
+    Disabled: false
+    DisabledTypes: []
+    Weight: 10
+    BreakBlocks: false
+    IgniteBlocks: false
+    Power: 4.0
+  Fast:
+    DisplayName: Fast
+    Disabled: false
+    DisabledTypes: []
+    Weight: 10
+    SpeedMultiplier: 1.5
+  Forceful:
+    DisplayName: Forceful
+    Disabled: false
+    DisabledTypes: []
+    Weight: 10
+    ForceMultiplier: 2.0
+  Glowing:
+    DisplayName: Glowing
+    Disabled: false
+    DisabledTypes: []
+    Weight: 10
+  Healing:
+    DisplayName: Healing
+    Disabled: false
+    DisabledTypes: []
+    Weight: 10
+    HealFor: 2.0
+    ShowHeal: true
+  Invisible:
+    DisplayName: Invisible
+    Disabled: false
+    DisabledTypes: []
+    Weight: 10
+  Joker:
+    DisplayName: Joker
+    Disabled: true
+    DisabledTypes: []
+    Weight: 10
+    HARDCORE: false
+    Particles:
+      Enabled: true
+      Particle: FLAME
+      ParticlesCount: 40
+      MaxDistanceFromSource: 2.0
+    ChangeHealth:
+      Chance: 10.0
+    Disarm:
+      Chance: 10.0
+      Range: 5.0
+    Teleport:
+      Chance: 10.0
+      Distance: 20.0
+    Surprise:
+      Chance: 10.0
+      Ticks: 20
+    Hydra:
+      Chance: 10.0
+    Disguise:
+      Enabled: false
+      Chance: 100.0
+      DeathMessage: '{player} was slain by {joker}'
+  Magma:
+    DisplayName: Magma
+    Disabled: true
+    DisabledTypes: []
+    Weight: 10
+  Poisonous:
+    DisplayName: Poisonous
+    Disabled: false
+    DisabledTypes: []
+    Weight: 10
+    Poison:
+      Duration: 60
+      Level: 0
+      Chance: 20.0
+  Slow:
+    DisplayName: Slow
+    Disabled: false
+    DisabledTypes: []
+    Weight: 10
+    SpeedMultiplier: 0.5
+  Strong:
+    DisplayName: Strong
+    Disabled: false
+    DisabledTypes: []
+    Weight: 10
+    Damage: 2
+    DamageMultiplier: 1.0
+  Sturdy:
+    DisplayName: Sturdy
+    Disabled: false
+    DisabledTypes: []
+    Weight: 10
+    KnockbackResistance: 1.0
+  Tough:
+    DisplayName: Tough
+    Disabled: false
+    DisabledTypes: []
+    Weight: 10
+    Armor: 2
+    ArmorMultiplier: 1.0
+  Wealthy:
+    DisplayName: Wealthy
+    Disabled: false
+    DisabledTypes: []
+    Weight: 5
+    CurrencyValueMutiplier: 5.0
+Entity:
+  Animal:
+    Disabled: true
+  Misc:
+    Disabled: true
+  Monster:
+    Disabled: false

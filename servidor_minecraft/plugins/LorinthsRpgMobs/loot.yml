@@ -1,0 +1,103 @@
+##########
+# loot.yml
+#   - configure mob loot tables by Level and LootTables
+#
+# ReplaceVanillaDrops: replaces any drops at the lowest event priority (shouldn't affect other drop plugins)
+# Items:
+#   itemId:
+#     Id: MATERIAL:durability
+#     Count: Number of items dropped
+#     DisplayName: Custom name (supports color codes '&')
+#     Lore: Lore for the item - (supports color codes '&')
+#     Enchantments:
+#       enchantId: level
+#     ItemFlags: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/inventory/ItemFlag.html
+#     - HIDE_ENCHANTS
+#
+# Drops:
+#   ENTITYTYPE:
+#     Level:
+#       LootTableName
+#         itemId or Material: chance to drop
+#
+# More detailed documentation below. Full credit goes to Discord user @0465830781 (Thank you so much)
+#
+# Drops:
+#  ZOMBIE:    <-- Entity which will be affected by the changes
+#    20:      <-- First mob level that will use modified loot tables.
+#                 It will use this loot tables until next set of loot tables will be specified.
+#                 So there is no need for specifying every single entity level, that should use this loot tables.
+#      VanillaMultiplier: 1
+#      A:
+#        A1: 50.0
+#        A2: 50.0
+#      B:
+#        B1: 1.0
+#        B2: 5.0
+#        B3: 0.1
+#      C:
+#        C1: 100.0
+#    40:
+#      VanillaMultiplier: 2
+#
+#     VanillaMultiplier --> Multiplies ONLY vanilla drops.
+#                           ex: VanillaMultiplier: 2 means zombies will 2 times more rotten flesh
+#
+#     A, B, C --> Loot tables. Every time the entity is killed the game will try to draw only one item form each loot table.
+#                 In this case: We have 3 loot tables, so zombies will drop 3 different loot (+ vanilla drops if ReplaceVanillaDrops is set to false).
+#                 Note that in B loot table item's drop rates doesn't add up to 100.0, so it will be possible to get nothing from B loot table.
+#                 Loot tables names doesn't matter.
+#
+#     A1, A2, B1, B2, B3, C1  --> Looted items. Every loot has a certain percentage chance to drop (A1 - 50%, B2 - 5%, C1 - 100%).
+#                                 Drops only one loot per loot table.
+#                                 Drop percentages in each loot table should NOT exceed 100.0.
+#                                 Names of items does matter.
+#
+#     In our scenario:
+#     Zombies with level from 20 to 39 (inclusive) will drop:
+#     Loot combination      Cumulative chance for this specific loot combination
+#     A1, B1, C1            0.5%
+#     A1, B2, C1            2.5%
+#     A1, B3, C1            0.05%
+#     A1, C1                46.95%
+#     A2, B1, C1            0.5%
+#     A2, B2, C1            2.5%
+#     A2, B3, C1            0.05%
+#     A2, C1                46.95%
+#
+##########
+
+Enabled: true
+ReplaceVanillaDrops: false
+Items:
+  smellyFlesh:
+    Id: ROTTEN_FLESH
+    Count: 1
+    DisplayName: '&aSmelly Flesh'
+    Lore:
+    - '&7This is some REALLY'
+    - '&aSmelly Flesh'
+    Enchantments:
+      unbreaking: 1
+    ItemFlags:
+    - HIDE_ENCHANTS
+    # NBTTags:
+    #  pluginKey:
+    #    tagKey: value
+  mmoItemSword:
+    mmoitem: SWORD KATANA
+Drops:
+  ZOMBIE:
+    1:
+      VanillaMultiplier: 1
+      LootTable:
+        smellyFlesh: 50.0
+        ROTTEN_FLESH: 50.0
+      LootTable2:
+        smellyFlesh: 1.0
+        ROTTEN_FLESH: 5.0
+        mmoItemSword: 0.1
+      Commands:
+        'give {playername} STONE 1': 5.0
+    100:
+      VanillaMultiplier: 2

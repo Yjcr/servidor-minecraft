@@ -1,0 +1,192 @@
+##########
+# indicators.yml
+#   - configure if and how holograms based on damage appear.
+#
+##########
+
+Enabled: true
+CONTACT:
+  UseHologram: true
+  HologramLines:
+    - '&c - {value}'
+  HologramRadius: 10.0
+ENTITY_ATTACK:
+  UseHologram: true
+  HologramLines:
+    - '&c - {value}'
+  HologramRadius: 10.0
+ENTITY_SWEEP_ATTACK:
+  UseHologram: true
+  HologramLines:
+    - '&c - {value}'
+  HologramRadius: 10.0
+PROJECTILE:
+  UseHologram: true
+  HologramLines:
+    - '&c - {value}'
+  HologramRadius: 10.0
+SUFFOCATION:
+  UseHologram: true
+  HologramLines:
+    - '&8 - {value}'
+  HologramRadius: 10.0
+FALL:
+  UseHologram: true
+  HologramLines:
+    - '&c - {value}'
+  HologramRadius: 10.0
+FIRE:
+  UseHologram: true
+  HologramLines:
+    - '&4 - {value}'
+  HologramRadius: 10.0
+FIRE_TICK:
+  UseHologram: true
+  HologramLines:
+    - '&4 - {value}'
+  HologramRadius: 10.0
+MELTING:
+  UseHologram: true
+  HologramLines:
+    - '&c - {value}'
+  HologramRadius: 10.0
+LAVA:
+  UseHologram: true
+  HologramLines:
+    - '&4 - {value}'
+  HologramRadius: 10.0
+DROWNING:
+  UseHologram: true
+  HologramLines:
+    - '&9 - {value}'
+  HologramRadius: 10.0
+BLOCK_EXPLOSION:
+  UseHologram: true
+  HologramLines:
+    - '&c - {value}'
+  HologramRadius: 10.0
+ENTITY_EXPLOSION:
+  UseHologram: true
+  HologramLines:
+    - '&c - {value}'
+  HologramRadius: 10.0
+VOID:
+  UseHologram: true
+  HologramLines:
+    - '&0 - {value}'
+  HologramRadius: 10.0
+LIGHTNING:
+  UseHologram: true
+  HologramLines:
+    - '&5 - {value}'
+  HologramRadius: 10.0
+SUICIDE:
+  UseHologram: true
+  HologramLines:
+    - '&4SUICIDE'
+  HologramRadius: 10.0
+STARVATION:
+  UseHologram: true
+  HologramLines:
+    - '&6 - {value}'
+  HologramRadius: 10.0
+POISON:
+  UseHologram: true
+  HologramLines:
+    - '&2 - {value}'
+  HologramRadius: 10.0
+MAGIC:
+  UseHologram: true
+  HologramLines:
+    - '&5 - {value}'
+  HologramRadius: 10.0
+WITHER:
+  UseHologram: true
+  HologramLines:
+    - '&8 - {value}'
+  HologramRadius: 10.0
+FALLING_BLOCK:
+  UseHologram: true
+  HologramLines:
+    - '&c - {value}'
+  HologramRadius: 10.0
+THORNS:
+  UseHologram: true
+  HologramLines:
+    - '&c - {value}'
+  HologramRadius: 10.0
+DRAGON_BREATH:
+  UseHologram: true
+  HologramLines:
+    - '&5 - {value}'
+  HologramRadius: 10.0
+CUSTOM:
+  UseHologram: true
+  HologramLines:
+    - '&c - {value}'
+  HologramRadius: 10.0
+FLY_INTO_WALL:
+  UseHologram: true
+  HologramLines:
+    - '&c - {value}'
+  HologramRadius: 10.0
+HOT_FLOOR:
+  UseHologram: true
+  HologramLines:
+    - '&c - {value}'
+  HologramRadius: 10.0
+CRAMMING:
+  UseHologram: true
+  HologramLines:
+    - '&c - {value}'
+  HologramRadius: 10.0
+DRYOUT:
+  UseHologram: true
+  HologramLines:
+    - '&c - {value}'
+  HologramRadius: 10.0
+HEAL_REGEN:
+  UseHologram: true
+  HologramLines:
+    - '&a + {value}'
+  HologramRadius: 10.0
+HEAL_SATIATED:
+  UseHologram: true
+  HologramLines:
+    - '&a + {value}'
+  HologramRadius: 10.0
+HEAL_EATING:
+  UseHologram: true
+  HologramLines:
+    - '&a + {value}'
+  HologramRadius: 10.0
+HEAL_ENDER_CRYSTAL:
+  UseHologram: true
+  HologramLines:
+    - '&a + {value}'
+  HologramRadius: 10.0
+HEAL_MAGIC:
+  UseHologram: true
+  HologramLines:
+    - '&a + {value}'
+  HologramRadius: 10.0
+HEAL_MAGIC_REGEN:
+  UseHologram: true
+  HologramLines:
+    - '&a + {value}'
+  HologramRadius: 10.0
+HEAL_WITHER_SPAWN:
+  UseHologram: true
+  HologramLines:
+    - '&a + {value}'
+  HologramRadius: 10.0
+HEAL_WITHER:
+  UseHologram: true
+  HologramLines:
+    - '&a + {value}'
+  HologramRadius: 10.0
+HEAL_CUSTOM:
+  UseHologram: true
+  HologramLines:
+    - '&a + {value}'
+  HologramRadius: 10.0

@@ -1,0 +1,32 @@
+[
+  {
+    "uuid": "2cbcf4a6-0099-3289-b977-18c916a1a362",
+    "name": "djgerad",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "a34fc017-c628-3fcd-9d8b-3d41118017ee",
+    "name": "LitMadness",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "faa106bb-40b1-3df5-b221-082432d1d867",
+    "name": "Gindaz",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "ce1a9492-5b4d-3fbb-9f7e-c74699881e3b",
+    "name": "DjTwistfly",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "02ab1a57-0edd-3713-9f58-15ec834d0062",
+    "name": "DjGuetta11",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  }
+]

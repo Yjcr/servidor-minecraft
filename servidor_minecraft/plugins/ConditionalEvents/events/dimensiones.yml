@@ -1,0 +1,42 @@
+Events:
+  dimension_nether:
+    type: player_teleport
+    conditions:
+    - '%to_world% == DIM-1'
+    actions:
+      default:
+      - 'cancel_event: true'
+      - 'call_event: acionesDeBloqueoDimension'
+    enabled: true
+  dimension_end:
+    type: player_teleport
+    conditions:
+    - '%to_world% == world_the_end'
+    actions:
+      default:
+      - 'cancel_event: true'
+      - 'call_event: acionesDeBloqueoDimension'
+  dimension_twilightforest:
+    type: player_teleport
+    conditions:
+    - '%to_world% == twilightforest'
+    actions:
+      default:
+      - 'cancel_event: true'
+      - 'call_event: acionesDeBloqueoDimension'
+  dimension_twilightforest_sky:
+    type: player_teleport
+    conditions:
+    - '%to_world% == skylight_forest'
+    actions:
+      default:
+      - 'cancel_event: true'
+      - 'call_event: acionesDeBloqueoDimension'
+  acionesDeBloqueoDimension:
+    type: call
+    actions:
+      default:
+      - 'title: 0;30;10;&cDimensión bloqueada;&7¡No puedes entrar a esta dimensión,
+        PAJUO!'
+      - 'give_potion_effect: BLINDNESS;40;1;false'
+      - 'playsound: BLOCK_BELL_USE;10;0'

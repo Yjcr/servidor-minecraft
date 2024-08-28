@@ -1,0 +1,156 @@
+---- Minecraft Crash Report ----
+// Would you like a cupcake?
+
+Time: 8/11/24, 9:49 PM
+Description: Mod loading error has occurred
+
+java.lang.Exception: Mod Loading has failed
+	at net.minecraftforge.fml.CrashReportExtender.dumpModLoadingCrashReport(CrashReportExtender.java:72) ~[forge:?] {re:classloading}
+	at net.minecraftforge.fml.server.ServerModLoader.load(ServerModLoader.java:37) ~[forge:?] {re:classloading}
+	at net.minecraft.server.Main.main(Main.java:136) ~[?:?] {re:classloading}
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}
+	at net.minecraftforge.fml.loading.FMLServerLaunchProvider.lambda$launchService$0(FMLServerLaunchProvider.java:37) ~[vanilla.jar:36.2] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37) ~[modlauncher-mohist-8.1.3.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:54) ~[modlauncher-mohist-8.1.3.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:72) ~[modlauncher-mohist-8.1.3.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:82) ~[modlauncher-mohist-8.1.3.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:66) ~[modlauncher-mohist-8.1.3.jar:?] {}
+	at net.minecraftforge.server.ServerMain$Runner.runLauncher(ServerMain.java:105) ~[vanilla.jar:?] {}
+	at net.minecraftforge.server.ServerMain.main(ServerMain.java:86) ~[vanilla.jar:?] {re:classloading,re:classloading,re:classloading,re:classloading,re:classloading}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: main
+Stacktrace:
+	at java.lang.ClassLoader.findClass(ClassLoader.java:733) ~[?:?] {}
+-- MOD dcintegration --
+Details:
+	Caused by 0: java.lang.NoClassDefFoundError: de/erdbeerbaerlp/dcintegration/common/storage/CommandRegistry
+		at de.erdbeerbaerlp.dcintegration.forge.DiscordIntegrationMod.serverSetup(DiscordIntegrationMod.java:128) ~[dcintegration:3.0.5] {re:classloading}
+		at net.minecraftforge.eventbus.EventBus.doCastFilter(EventBus.java:248) ~[vanilla.jar:?] {}
+		at net.minecraftforge.eventbus.EventBus.lambda$addListener$11(EventBus.java:240) ~[vanilla.jar:?] {}
+		at net.minecraftforge.eventbus.EventBus.post(EventBus.java:304) ~[vanilla.jar:?] {}
+		at net.minecraftforge.eventbus.EventBus.post(EventBus.java:284) ~[vanilla.jar:?] {}
+		at net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:106) ~[forge:?] {re:classloading}
+		at net.minecraftforge.fml.ModContainer.lambda$buildTransitionHandler$4(ModContainer.java:107) ~[forge:?] {re:classloading}
+		at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?] {}
+		at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?] {}
+		at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) ~[?:?] {}
+		at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) ~[?:?] {}
+		at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) ~[?:?] {}
+		at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) ~[?:?] {}
+		at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) ~[?:?] {}
+
+	Mod File: dcintegration-forge-3.0.5-1.16.5.jar
+	Failure message: Discord Integration (dcintegration) encountered an error during the sided_setup event phase
+		java.lang.NoClassDefFoundError: de/erdbeerbaerlp/dcintegration/common/storage/CommandRegistry
+	Mod Version: 3.0.5
+	Mod Issue URL: https://github.com/ErdbeerbaerLP/Discord-Chat-Integration/issues
+	Exception message: java.lang.ClassNotFoundException: de.erdbeerbaerlp.dcintegration.common.storage.CommandRegistry
+Stacktrace:
+	at java.lang.ClassLoader.findClass(ClassLoader.java:733) ~[?:?] {}
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:593) ~[?:?] {}
+	at cpw.mods.modlauncher.TransformingClassLoader.loadClass(TransformingClassLoader.java:117) ~[modlauncher-mohist-8.1.3.jar:?] {re:classloading}
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[?:?] {}
+	at de.erdbeerbaerlp.dcintegration.forge.DiscordIntegrationMod.serverSetup(DiscordIntegrationMod.java:128) ~[dcintegration:3.0.5] {re:classloading}
+	at net.minecraftforge.eventbus.EventBus.doCastFilter(EventBus.java:248) ~[vanilla.jar:?] {}
+	at net.minecraftforge.eventbus.EventBus.lambda$addListener$11(EventBus.java:240) ~[vanilla.jar:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:304) ~[vanilla.jar:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:284) ~[vanilla.jar:?] {}
+	at net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:106) ~[forge:?] {re:classloading}
+	at net.minecraftforge.fml.ModContainer.lambda$buildTransitionHandler$4(ModContainer.java:107) ~[forge:?] {re:classloading}
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?] {}
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) ~[?:?] {}
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) ~[?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.16.5
+	Minecraft Version ID: 1.16.5
+	Mohist Version: 1.16.5-1242
+	Operating System: Linux (amd64) version 6.5.0-1022-azure
+	Java Version: 21.0.3, Microsoft
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Microsoft
+	Memory: 2985816064 bytes (2847 MB) / 5117050880 bytes (4880 MB) up to 10737418240 bytes (10240 MB)
+	CPUs: 4
+	JVM Flags: 2 total; -Xms2G -Xmx10G
+	ModLauncher: mohist-8.1.3
+	ModLauncher launch target: fmlserver
+	ModLauncher naming: srg
+	ModLauncher services: 
+		/mixin-0.8.4.jar mixin PLUGINSERVICE 
+		/eventbus-4.0.0.jar eventbus PLUGINSERVICE 
+		/vanilla.jar object_holder_definalize PLUGINSERVICE 
+		/vanilla.jar runtime_enum_extender PLUGINSERVICE 
+		/vanilla.jar capability_inject_definalize PLUGINSERVICE 
+		/accesstransformers-3.0.1.jar accesstransformer PLUGINSERVICE 
+		/vanilla.jar runtimedistcleaner PLUGINSERVICE 
+		/mixin-0.8.4.jar mixin TRANSFORMATIONSERVICE 
+		/vanilla.jar fml TRANSFORMATIONSERVICE 
+	FML: 36.2
+	Forge: com.mohistmc:36.2.42
+	FML Language Providers: 
+		javafml@36.2
+		minecraft@1
+	Mod List: 
+		mohist-1.16.5-1242-server.jar                     |Minecraft                     |minecraft                     |1.16.5              |ENQUEUE_IM|Manifest: NOSIGNATURE
+		repurposed_structures_forge-3.4.7+1.16.5.jar      |Repurposed Structures         |repurposed_structures         |3.4.7+1.16.5        |ENQUEUE_IM|Manifest: NOSIGNATURE
+		BetterDungeons-1.16.4-1.2.1.jar                   |YUNG's Better Dungeons        |betterdungeons                |1.16.4-1.2.1        |ENQUEUE_IM|Manifest: NOSIGNATURE
+		zombiehorsespawn_1.16.5-3.0.jar                   |Zombie Horse Spawn            |zombiehorsespawn              |3.0                 |ENQUEUE_IM|Manifest: NOSIGNATURE
+		Pirates_And_Looters_Kraken_Update.jar             |PiratesAndLootersReborn       |piratesandlootersreborn       |1.0.0               |ENQUEUE_IM|Manifest: NOSIGNATURE
+		rare-ice-0.2.2.jar                                |Rare Ice                      |rare-ice                      |version             |ENQUEUE_IM|Manifest: NOSIGNATURE
+		libraryferret-forge-1.16.5-4.0.0.jar              |Library ferret                |libraryferret                 |4.0.0               |ENQUEUE_IM|Manifest: NOSIGNATURE
+		goblintraders-1.7.3-1.16.5.jar                    |Goblin Traders                |goblintraders                 |1.7.3               |ENQUEUE_IM|Manifest: NOSIGNATURE
+		caelus-forge-1.16.5-2.1.3.2.jar                   |Caelus API                    |caelus                        |1.16.5-2.1.3.2      |ENQUEUE_IM|Manifest: NOSIGNATURE
+		colytra-forge-1.16.5-5.1.1.2.jar                  |Colytra                       |colytra                       |1.16.5-5.1.1.2      |ENQUEUE_IM|Manifest: NOSIGNATURE
+		whisperwoods-1.16.5-2.1.1-forge.jar               |Whisperwoods                  |whisperwoods                  |1.16.5-2.1.1        |ENQUEUE_IM|Manifest: NOSIGNATURE
+		curios-forge-1.16.5-4.1.0.0.jar                   |Curios API                    |curios                        |1.16.5-4.1.0.0      |ENQUEUE_IM|Manifest: NOSIGNATURE
+		Patchouli-1.16.4-53.3.jar                         |Patchouli                     |patchouli                     |1.16.4-53.3         |ENQUEUE_IM|Manifest: NOSIGNATURE
+		Waystones_1.16.5-7.6.4.jar                        |Waystones                     |waystones                     |7.6.4               |ENQUEUE_IM|Manifest: NOSIGNATURE
+		gravestone-1.16.5-1.0.7.jar                       |Gravestone Mod                |gravestone                    |1.16.5-1.0.7        |ENQUEUE_IM|Manifest: NOSIGNATURE
+		collective-1.16.5-5.49.jar                        |Collective                    |collective                    |5.49                |ENQUEUE_IM|Manifest: NOSIGNATURE
+		journeymap-1.16.5-5.8.6.jar                       |Journeymap                    |journeymap                    |5.8.6               |ENQUEUE_IM|Manifest: NOSIGNATURE
+		[1.16.5] SecurityCraft v1.9.10.1.jar              |SecurityCraft                 |securitycraft                 |v1.9.10.1           |ENQUEUE_IM|Manifest: NOSIGNATURE
+		TravelersBackpack-1.16.5-5.4.51.jar               |Traveler's Backpack           |travelersbackpack             |5.4.51              |ENQUEUE_IM|Manifest: NOSIGNATURE
+		StorageDrawers-1.16.3-8.5.2.jar                   |Storage Drawers               |storagedrawers                |8.5.2               |ENQUEUE_IM|Manifest: NOSIGNATURE
+		sit-1.16.5-v1.3.2.jar                             |Sit                           |sit                           |v1.3.2              |ENQUEUE_IM|Manifest: NOSIGNATURE
+		Artifacts-1.16.5-2.10.5.jar                       |Artifacts                     |artifacts                     |1.16.5-2.10.5       |ENQUEUE_IM|Manifest: NOSIGNATURE
+		YungsApi-1.16.4-Forge-13.jar                      |YUNG's API                    |yungsapi                      |1.16.4-Forge-13     |ENQUEUE_IM|Manifest: NOSIGNATURE
+		bettervillage-forge-1.16.5-3.2.0.jar              |Better village                |bettervillage                 |3.1.0               |ENQUEUE_IM|Manifest: NOSIGNATURE
+		elevatorid-1.16.5-1.7.13.jar                      |Elevator Mod                  |elevatorid                    |1.16.5-1.7.13       |ENQUEUE_IM|Manifest: NOSIGNATURE
+		Gobber2-Forge-1.16.5-2.3.55.jar                   |Gobber 2                      |gobber2                       |2.3.55              |ENQUEUE_IM|Manifest: NOSIGNATURE
+		dawnoftime_builder_edition-1.16.5-1.3.5.jar       |Dawn Of Time : Builder Edition|dawnoftimebuilder             |1.16.5-1.3.5-beta   |ENQUEUE_IM|Manifest: NOSIGNATURE
+		BetterStrongholds-1.16.4-1.2.1.jar                |YUNG's Better Strongholds     |betterstrongholds             |1.16.4-1.2.1        |ENQUEUE_IM|Manifest: NOSIGNATURE
+		betteranimalsplus-1.16.5-11.0.10-forge.jar        |Better Animals Plus           |betteranimalsplus             |1.16.5-11.0.10      |ENQUEUE_IM|Manifest: NOSIGNATURE
+		wolveswitharmor-1.1.0-1.16.2.jar                  |Wolves With Armor             |wolveswitharmor               |1.1.0               |ENQUEUE_IM|Manifest: NOSIGNATURE
+		Atlas-Lib-1.16.5-1.1.3c.jar                       |Atlas Lib                     |atlaslib                      |1.1.3c              |ENQUEUE_IM|Manifest: NOSIGNATURE
+		architectury-1.32.68.jar                          |Architectury                  |architectury                  |1.32.68             |ENQUEUE_IM|Manifest: NOSIGNATURE
+		The-Hordes-1.16.5-1.1.5c.jar                      |The Hordes                    |hordes                        |1.1.5c              |ENQUEUE_IM|Manifest: NOSIGNATURE
+		immersive-armors-1.5.1+1.16.5-forge.jar           |Immersive Armors              |immersive_armors              |1.5.1+1.16.5        |ENQUEUE_IM|Manifest: NOSIGNATURE
+		carryon-1.16.5-1.15.6.24.jar                      |Carry On                      |carryon                       |1.15.6.24           |ENQUEUE_IM|Manifest: NOSIGNATURE
+		FallingTree-1.16.5-2.11.7.jar                     |FallingTree                   |fallingtree                   |2.11.7              |ENQUEUE_IM|Manifest: NOSIGNATURE
+		BetterEnder1.0-1.16.5+(2).jar                     |BetterEnder Mod               |betterendermod                |5.8.0               |ENQUEUE_IM|Manifest: NOSIGNATURE
+		mohist-1.16.5-1242-universal.jar                  |Forge                         |forge                         |36.2.42             |ENQUEUE_IM|Manifest: NOSIGNATURE
+		appleskin-forge-mc1.16.x-2.5.1.jar                |AppleSkin                     |appleskin                     |2.5.1+mc1.16.4      |ENQUEUE_IM|Manifest: NOSIGNATURE
+		strayspawn_1.16.5-1.4.jar                         |Stray Spawn                   |strayspawn                    |1.4                 |ENQUEUE_IM|Manifest: NOSIGNATURE
+		expandability-2.0.2-forge.jar                     |ExpandAbility                 |expandability                 |2.0.2               |ENQUEUE_IM|Manifest: NOSIGNATURE
+		dcintegration-forge-3.0.5-1.16.5.jar              |Discord Integration           |dcintegration                 |3.0.5               |ERROR     |Manifest: NOSIGNATURE
+		valhelsia_core-16.0.15.jar                        |Valhelsia Core                |valhelsia_core                |16.0.15             |ENQUEUE_IM|Manifest: NOSIGNATURE
+		valhelsia_structures-1.16.5-0.1.6.jar             |Valhelsia Structures          |valhelsia_structures          |1.16.5-0.1.6        |ENQUEUE_IM|Manifest: NOSIGNATURE
+		BetterMineshafts-Forge-1.16.4-2.0.4.jar           |YUNG's Better Mineshafts      |bettermineshafts              |1.16.4-2.0.4        |ENQUEUE_IM|Manifest: NOSIGNATURE
+		geckolib-forge-1.16.5-3.0.106.jar                 |GeckoLib                      |geckolib3                     |3.0.106             |ENQUEUE_IM|Manifest: NOSIGNATURE
+		Glass_doors_and_Trapdoors_v2.0.0.jar              |Glass doors and Trapdoors     |glass_doors_and_trapdoors     |2.0.0               |ENQUEUE_IM|Manifest: NOSIGNATURE
+		DungeonsArise-1.16.5-2.1.49-beta.jar              |When Dungeons Arise           |dungeons_arise                |2.1.49              |ENQUEUE_IM|Manifest: NOSIGNATURE
+	Crash Report UUID: 70c0e129-e7bb-46a1-8c28-0a277f060467
+	CraftBukkit Information: 
+   Running: 
+   Failed to handle CraftCrashReport: craftbukkit not runs
